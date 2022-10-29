@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dialog</class>
+ <widget class="QDialog" name="dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>643</width>
+    <height>528</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTimeEdit" name="startTime">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="endTime">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>110</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="subName">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>241</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>Input subreddit name...</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="submit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>140</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Submit</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="startDate">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumDateTime">
+    <datetime>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2021</year>
+     <month>10</month>
+     <day>29</day>
+    </datetime>
+   </property>
+   <property name="maximumDate">
+    <date>
+     <year>2022</year>
+     <month>10</month>
+     <day>31</day>
+    </date>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="endDate">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>60</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="day">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>180</y>
+     <width>621</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>74</number>
+   </attribute>
+   <row>
+    <property name="text">
+     <string>Number of posts</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>Monday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Tuesday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Wednesday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Thursday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Friday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Saturday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Sunday</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QTableWidget" name="postTime">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>240</y>
+     <width>621</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOn</enum>
+   </property>
+   <property name="autoScrollMargin">
+    <number>16</number>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>64</number>
+   </attribute>
+   <row>
+    <property name="text">
+     <string>Number of posts</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>12am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>1am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>2am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>3am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>4am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>5am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>7am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>8am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>9am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>10am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>11am</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>12pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>1pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>2pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>3pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>4pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>5pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>6pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>7pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>8pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>9pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>10pm</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>11pm</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QTableWidget" name="keyWords">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>320</y>
+     <width>621</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <row>
+    <property name="text">
+     <string>Word</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Instances</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+  </widget>
+  <widget class="QTableWidget" name="length">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>430</y>
+     <width>621</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>111</number>
+   </attribute>
+   <row>
+    <property name="text">
+     <string>Length</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Instances</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Start Date</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>40</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>End Date</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Start Time</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>90</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>End Time</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>300</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Common Key Words</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>410</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Length of Posts</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
