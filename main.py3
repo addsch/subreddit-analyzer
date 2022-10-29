@@ -1,6 +1,7 @@
 import praw
 import time
 import sys
+from datetime import datetime
 from PyQt5 import QtWidgets, uic
 from nltk.corpus import stopwords
 from maps import maps
@@ -27,11 +28,20 @@ class Ui(QtWidgets.QDialog):
         self.keyTable = self.findChild(QtWidgets.QTableWidget, 'keyWords')
         self.lenTable = self.findChild(QtWidgets.QTableWidget, 'length')
 
+        # get pointers to start and end date filters
+        self.startDateInp = self.findChild(QtWidgets.QDateEdit, 'startDate')
+        self.endDateInp = self.findChild(QtWidgets.QDateEdit, 'endDate')
+
         # get pointer to input box
         self.input = self.findChild(QtWidgets.QLineEdit, 'subName')
 
     def pressSubmit(self):
-        count(maps, reddit.subreddit(self.input.text()).top(limit=100, time_filter="year"))
+        # convert start and end filters to UTC epoch
+        startEpoch = datetime.strptime(self.startDateInp.text(), "%m/%d/%Y").timestamp()
+        endEpoch = datetime.strptime(self.endDateInp.text(), "%m/%d/%Y").timestamp()
+        top = reddit.subreddit(self.input.text()).top(limit=100, time_filter="year")
+
+        count(maps, top, startEpoch, endEpoch)
 
         i = 0
         for value in maps.dayDict.values():
@@ -58,7 +68,7 @@ class Ui(QtWidgets.QDialog):
             if i == 5: break
 
 # get top 500 posts in last year of subreddit and add relevant items to dictionaries
-def count(maps: maps, top, start = 0, end = time.time()):
+def count(maps: maps, top, start, end):
     s = set(stopwords.words('english'))
     for post in top:
         utc = post.created_utc

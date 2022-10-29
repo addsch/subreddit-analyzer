@@ -79,24 +79,27 @@
      <hour>7</hour>
      <minute>0</minute>
      <second>0</second>
-     <year>2021</year>
+     <year>2020</year>
      <month>10</month>
      <day>28</day>
     </datetime>
    </property>
    <property name="maximumDate">
     <date>
-     <year>2022</year>
+     <year>2030</year>
      <month>11</month>
-     <day>1</day>
+     <day>21</day>
     </date>
    </property>
    <property name="minimumDate">
     <date>
-     <year>2021</year>
+     <year>2020</year>
      <month>10</month>
      <day>28</day>
     </date>
+   </property>
+   <property name="displayFormat">
+    <string>M/d/yyyy</string>
    </property>
    <property name="timeSpec">
     <enum>Qt::UTC</enum>
@@ -131,6 +134,9 @@
      <month>10</month>
      <day>29</day>
     </date>
+   </property>
+   <property name="displayFormat">
+    <string>M/d/yyyy</string>
    </property>
    <property name="timeSpec">
     <enum>Qt::UTC</enum>
