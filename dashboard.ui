@@ -22,15 +22,15 @@
      <height>22</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QTimeEdit" name="endTime">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>110</y>
-     <width>121</width>
-     <height>22</height>
-    </rect>
+   <property name="timeSpec">
+    <enum>Qt::UTC</enum>
+   </property>
+   <property name="time">
+    <time>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>0</second>
+    </time>
    </property>
   </widget>
   <widget class="QLineEdit" name="subName">
@@ -41,6 +41,9 @@
      <width>241</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="inputMask">
+    <string/>
    </property>
    <property name="text">
     <string/>
@@ -73,19 +76,36 @@
    </property>
    <property name="minimumDateTime">
     <datetime>
-     <hour>0</hour>
+     <hour>7</hour>
      <minute>0</minute>
      <second>0</second>
      <year>2021</year>
      <month>10</month>
-     <day>29</day>
+     <day>28</day>
     </datetime>
    </property>
    <property name="maximumDate">
     <date>
      <year>2022</year>
+     <month>11</month>
+     <day>1</day>
+    </date>
+   </property>
+   <property name="minimumDate">
+    <date>
+     <year>2021</year>
      <month>10</month>
-     <day>31</day>
+     <day>28</day>
+    </date>
+   </property>
+   <property name="timeSpec">
+    <enum>Qt::UTC</enum>
+   </property>
+   <property name="date">
+    <date>
+     <year>2021</year>
+     <month>10</month>
+     <day>28</day>
     </date>
    </property>
   </widget>
@@ -97,6 +117,30 @@
      <width>121</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="maximumDate">
+    <date>
+     <year>2023</year>
+     <month>12</month>
+     <day>31</day>
+    </date>
+   </property>
+   <property name="minimumDate">
+    <date>
+     <year>2021</year>
+     <month>10</month>
+     <day>29</day>
+    </date>
+   </property>
+   <property name="timeSpec">
+    <enum>Qt::UTC</enum>
+   </property>
+   <property name="date">
+    <date>
+     <year>2022</year>
+     <month>12</month>
+     <day>31</day>
+    </date>
    </property>
   </widget>
   <widget class="QTableWidget" name="day">
@@ -488,6 +532,26 @@
    </property>
    <property name="text">
     <string>Length of Posts</string>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="endTime">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>110</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="timeSpec">
+    <enum>Qt::UTC</enum>
+   </property>
+   <property name="time">
+    <time>
+     <hour>23</hour>
+     <minute>59</minute>
+     <second>0</second>
+    </time>
    </property>
   </widget>
  </widget>
