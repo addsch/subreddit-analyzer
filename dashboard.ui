@@ -11,28 +11,8 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Subreddit Analyzer</string>
   </property>
-  <widget class="QTimeEdit" name="startTime">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>110</y>
-     <width>121</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="timeSpec">
-    <enum>Qt::UTC</enum>
-   </property>
-   <property name="time">
-    <time>
-     <hour>0</hour>
-     <minute>0</minute>
-     <second>0</second>
-    </time>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="subName">
    <property name="geometry">
     <rect>
@@ -50,6 +30,29 @@
    </property>
    <property name="placeholderText">
     <string>Input subreddit name...</string>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="startTime">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>hh:mm</string>
+   </property>
+   <property name="timeSpec">
+    <enum>Qt::UTC</enum>
+   </property>
+   <property name="time">
+    <time>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>0</second>
+    </time>
    </property>
   </widget>
   <widget class="QPushButton" name="submit">
@@ -548,6 +551,9 @@
      <width>121</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="displayFormat">
+    <string>hh:mm</string>
    </property>
    <property name="timeSpec">
     <enum>Qt::UTC</enum>
