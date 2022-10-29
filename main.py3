@@ -32,6 +32,10 @@ class Ui(QtWidgets.QDialog):
         self.startDateInp = self.findChild(QtWidgets.QDateEdit, 'startDate')
         self.endDateInp = self.findChild(QtWidgets.QDateEdit, 'endDate')
 
+        # get points to start and end hour filters
+        self.startTimeInp = self.findChild(QtWidgets.QTimeEdit, 'startTime')
+        self.endTimeInp = self.findChild(QtWidgets.QTimeEdit, 'endTime')
+
         # get pointer to input box
         self.input = self.findChild(QtWidgets.QLineEdit, 'subName')
 
@@ -39,10 +43,17 @@ class Ui(QtWidgets.QDialog):
         # convert start and end filters to UTC epoch
         startEpoch = datetime.strptime(self.startDateInp.text(), "%m/%d/%Y").timestamp()
         endEpoch = datetime.strptime(self.endDateInp.text(), "%m/%d/%Y").timestamp()
-        top = reddit.subreddit(self.input.text()).top(limit=100, time_filter="year")
 
-        count(maps, top, startEpoch, endEpoch)
+        # remove ':' from start and end time inputs
+        startTime = self.startTimeInp.text()[0:2] + self.startTimeInp.text()[3:5]
+        endTime = self.endTimeInp.text()[0:2] + self.endTimeInp.text()[3:5]
 
+        # get top 500 posts of subreddit
+        top = reddit.subreddit(self.input.text()).top(limit=10, time_filter="year")
+
+        count(maps, top, startEpoch, endEpoch, int(startTime), int(endTime))
+
+        # print the results into the tables of the ui
         i = 0
         for value in maps.dayDict.values():
             self.dayTable.setItem(0, i, QtWidgets.QTableWidgetItem(str(value)))
@@ -68,11 +79,13 @@ class Ui(QtWidgets.QDialog):
             if i == 5: break
 
 # get top 500 posts in last year of subreddit and add relevant items to dictionaries
-def count(maps: maps, top, start, end):
+def count(maps: maps, top, startDay, endDay, startTime, endTime):
     s = set(stopwords.words('english'))
     for post in top:
         utc = post.created_utc
-        if utc >= start and utc <= end:
+        timePosted = int(datetime.fromtimestamp(utc).strftime('%H%M'))
+        
+        if utc >= startDay and utc <= endDay and timePosted >= startTime and timePosted <= endTime:
             day = time.strftime('%A', time.localtime(utc))
             hour = time.strftime('%H', time.localtime(utc))
             title = [x.lower() for x in post.title.split()] # make everything lowercase for filtering the stopwords
