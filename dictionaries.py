@@ -1,4 +1,4 @@
-class maps(object):
+class dictionaries(object):
     # make sure day and time dictionaries are sorted when printing to ui
     def __init__(self):
         self.reset()

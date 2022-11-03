@@ -2,7 +2,7 @@ import praw
 import sys
 import time
 from datetime import datetime
-from maps import maps
+from dictionaries import dictionaries
 from nltk.corpus import stopwords
 from PyQt5 import QtWidgets, uic
 
@@ -38,7 +38,7 @@ class Ui(QtWidgets.QDialog):
         self.input = self.findChild(QtWidgets.QLineEdit, 'subName')
 
     def pressSubmit(self):
-        dicts = maps()
+        dicts = dictionaries()
 
         # convert start and end filters to UTC epoch
         startEpoch = datetime.strptime(self.startDateInp.text(), "%m/%d/%Y").timestamp()
